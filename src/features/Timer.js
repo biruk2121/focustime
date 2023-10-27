@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { View, Text, Vibration, StyleSheet } from 'react-native';
-import { ProgressBar } from 'react-native-paper';
-import { useKeepAwake } from 'expo-keep-awake';
-import { Countdown } from '../components/Countdown';
-import { RoundedButton } from '../components/RoundedButton';
-import { spacing } from '../utils/sizes';
-import { colors } from '../utils/colors';
-import { Timing } from './Timing';
+import React, { useState } from "react";
+import { View, Text, Vibration, StyleSheet } from "react-native";
+import { ProgressBar } from "react-native-paper";
+import { useKeepAwake } from "expo-keep-awake";
+import { Countdown } from "../components/Countdown";
+import { RoundedButton } from "../components/RoundedButton";
+import { spacing } from "../utils/sizes";
+import { colors } from "../utils/colors";
+import { Timing } from "./Timing";
 
 const ONE_SECOND_IN_MS = 1000;
 const PATTERN = [
@@ -18,7 +18,7 @@ export const Timer = ({ focusSubject, clearSubject, onTimerEnd }) => {
   useKeepAwake();
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [minutes, setMinutes] = useState(0.2);
+  const [minutes, setMinutes] = useState(0.1);
 
   const onEnd = (reset) => {
     Vibration.vibrate(PATTERN);
@@ -74,33 +74,33 @@ const styles = StyleSheet.create({
   },
   countdown: {
     flex: 0.5,
-    alignItems: 'center',
+    alignItems: "center",
 
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   buttonWrapper: {
     flex: 0.3,
-    flexDirection: 'row',
+    flexDirection: "row",
     padding: spacing.md,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     color: colors.white,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
   },
   task: {
     color: colors.white,
-    textAlign: 'center',
+    textAlign: "center",
   },
   timingWrapper: {
     flex: 0.1,
     paddingTop: spacing.xxl,
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   clearSubjectWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });
